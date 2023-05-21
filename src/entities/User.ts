@@ -19,10 +19,4 @@ export class User {
 
   @Column({ type: 'text' })
   password: string
-
-  @Column({ type: 'text', nullable: true })
-  avatar_url: string
-
-  @Column({ type: 'text', nullable: true })
-  avatar_path: string
 }
