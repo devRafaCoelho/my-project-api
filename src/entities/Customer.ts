@@ -36,12 +36,6 @@ export class Customer {
   @Column({ type: 'varchar', length: 2, nullable: true })
   uf: string
 
-  @Column({ type: 'text', nullable: true })
-  avatar_url: string
-
-  @Column({ type: 'text', nullable: true })
-  avatar_path: string
-
   @OneToMany(() => Record, (record) => record.customer)
   records: Record[]
 }

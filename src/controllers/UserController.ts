@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 export class UserController {
-  async register(req: Request, res: Response) {
+  async registerUser(req: Request, res: Response) {
     const { name, email, password } = req.body
 
     const hasUser = await userRepository.findOneBy({ email })
@@ -47,8 +47,8 @@ export class UserController {
     })
   }
 
-  async getUserdata(req: Request, res: Response) {
-    return res.json(req.user)
+  async getUser(req: Request, res: Response) {
+    return res.status(200).json(req.user)
   }
 
   async updateUser(req: Request, res: Response) {
